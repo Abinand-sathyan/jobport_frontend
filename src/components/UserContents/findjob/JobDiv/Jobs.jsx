@@ -25,7 +25,7 @@ const Jobs = () => {
     if (token) {
       (async function invoke() {
         await jobdata(token).then((res) => {
-          setJobdatas(res.data.jobdata);
+          setJobdatas(res?.data?.jobdata);
         });
       })();
     } else {
