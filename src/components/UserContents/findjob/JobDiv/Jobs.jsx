@@ -57,7 +57,7 @@ const Jobs = () => {
         className="jobContainer flex gap-10 justify-center flex-wrap items-center
       py-10"
       >
-        {jobdatas.map((n) => {
+        {jobdatas?.map((n) => {
           return (
             <div
               className="group group/item singleJob w-[250PX] p-[20px] bg-white border border-violet-600 rounded-[10px]
