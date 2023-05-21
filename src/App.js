@@ -2,6 +2,15 @@ import './App.css';
 import {Routes,Route} from "react-router-dom"
 import Landingpage from './pages/Landingpage';
 
+// Protected  Routes
+
+import AdminPrivteRoute from './Utils/AdminPrivteRoute';
+import UserPrivateRoute from './Utils/UserPrivateRoute';
+import RecruiterPrivateRoute from './Utils/RecruiterPrivateRoute';
+
+
+
+
 // client pages
 
 import Loginpage from './pages/user/Loginpage';
@@ -56,6 +65,8 @@ function App() {
       
       <Route element={<Loginpage/>} exact path='/login'/>
       <Route element={<Signupage/>} path='/signup'/>
+
+      <Route element={<UserPrivateRoute/>}>
       <Route element={<Homepage/>}  path='/home'/>
       <Route element={<Resume/>}  path='/resumebuild'/>
       <Route element={<FindJobs />} path='/findjobs'/>
@@ -67,11 +78,13 @@ function App() {
       <Route element={<VerifNumber/>} path='/verifynumber'/>
       <Route element={<Restpassword/>} path='/resetpassword'/>
       <Route element={<Fgotp/>} path='/fgtotp'/>
-
+      </Route>
       {/* recruiter router */}
       
       <Route element={<Reqloginpage/>} exact path='/recruiter/login'/>
       <Route element={<Reqsignupage/>} path='/recuiter/signup'/>
+
+      <Route element={<RecruiterPrivateRoute/>}>
       <Route element={<Reqhomepage/>}  path='/recuiter/reqhome'/>
       <Route element={<Myjobspage />} path='/recruiter/myjobs'/>
       <Route element={<Subscription />} path='/recruiter/subscription'/>
@@ -80,11 +93,13 @@ function App() {
       <Route element={<Messagers/>} path='/recruiter/messages'/>
       <Route element={<ProfileReq/>} path='/recruiter/profile'/>
       <Route element={<Hiredcandidates/>} path='/recruiter/hiredcandidates'/>
-
+      </Route>
      {/* admin router */}   
 
      <Route element={<Adminloginpage/>} exact path='/admin/login'/>
      <Route element={<Adminsignuppage/>} path='/admin/signup'/>
+     
+     <Route element={<AdminPrivteRoute/>}>
      <Route element={<Adminhomepage/>}  path='/admin/home'/>
      <Route element={<Adminuserpage/>}  path='/admin/user'/>
      <Route element={<AdminRecruiterpage/>}  path='/admin/recruiter'/>
@@ -92,6 +107,8 @@ function App() {
      <Route element={<AdminSubscription/>}  path='/admin/subscription'/>
      <Route element={<AdminAddsubscription/>}  path='/admin/addsubscription'/>
      <Route element={<Dasboard/>}  path='/admin/dashboard'/>
+     </Route>
+    
     </Routes>
     </div>
   );
