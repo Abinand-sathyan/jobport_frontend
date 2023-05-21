@@ -3,11 +3,11 @@ import { Navigate, Outlet } from "react-router-dom"
 
 const RecruiterPrivateRoute = () => {
 
-const clientToken = JSON.parse(localStorage.getItem('recruiterToken'))
+    const token = localStorage.getItem("recruiterToken");
 
 return (
 
-    clientToken ? <Outlet/> : <Navigate to="/recruiter/login"/>
+    token ? <Outlet/> : <Navigate to="/recruiter/login"/>
 )
    
 

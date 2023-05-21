@@ -3,11 +3,11 @@ import { Navigate, Outlet } from "react-router-dom"
 
 const AdminPrivteRoute = () => {
 
-const adminToken = JSON.parse(localStorage.getItem('AdminToken'))
+    const token = localStorage.getItem("AdminToken");
 
 return (
 
-    adminToken ? <Outlet/> : <Navigate to="/admin/login"/>
+    token ? <Outlet/> : <Navigate to="/admin/login"/>
 )
    
 

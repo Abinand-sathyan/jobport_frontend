@@ -3,11 +3,11 @@ import { Navigate, Outlet } from "react-router-dom"
 
 const UserPrivateRoute = () => {
 
-const clientToken = JSON.parse(localStorage.getItem('userToken'))
+    const token = localStorage.getItem("userToken");
 
 return (
 
-    clientToken ? <Outlet/> : <Navigate to="/login"/>
+    token ? <Outlet/> : <Navigate to="/login"/>
 )
    
 
