@@ -65,6 +65,10 @@ function App() {
       
       <Route element={<Loginpage/>} exact path='/login'/>
       <Route element={<Signupage/>} path='/signup'/>
+      <Route element={<Otpvrification/>} path='/otpverification'/>
+      <Route element={<VerifNumber/>} path='/verifynumber'/>
+      <Route element={<Restpassword/>} path='/resetpassword'/>
+      <Route element={<Fgotp/>} path='/fgtotp'/>
 
       <Route element={<UserPrivateRoute/>}>
       <Route element={<Homepage/>}  path='/home'/>
@@ -74,10 +78,6 @@ function App() {
       <Route element={<Profile/>} path='/profile'/>
       <Route element={<Applied/>} path='/jobapplied'/>
       <Route element={<Messages/>} path='/messages'/>
-      <Route element={<Otpvrification/>} path='/otpverification'/>
-      <Route element={<VerifNumber/>} path='/verifynumber'/>
-      <Route element={<Restpassword/>} path='/resetpassword'/>
-      <Route element={<Fgotp/>} path='/fgtotp'/>
       </Route>
       {/* recruiter router */}
       
