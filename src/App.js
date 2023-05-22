@@ -1,6 +1,7 @@
 import './App.css';
 import {Routes,Route} from "react-router-dom"
 import Landingpage from './pages/Landingpage';
+import ErrorScreen from './pages/ErrorScreen';
 
 // Protected  Routes
 
@@ -52,6 +53,7 @@ import Adminjobspage from './pages/admin/Adminjobspage';
 import AdminSubscription from './pages/admin/AdminSubscription';
 import AdminAddsubscription from './pages/admin/AdminAddsubscription';
 import Dasboard from './pages/admin/Dasboard';
+
 
 
 function App() {
@@ -108,6 +110,8 @@ function App() {
      <Route element={<AdminAddsubscription/>}  path='/admin/addsubscription'/>
      <Route element={<Dasboard/>}  path='/admin/dashboard'/>
      </Route>
+
+     <Route path="/*" element={<ErrorScreen/>}></Route>
     
     </Routes>
     </div>
