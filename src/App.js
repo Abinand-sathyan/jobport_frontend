@@ -113,7 +113,7 @@ function App() {
      <Route element={<ErrorHandling />} path="/admin/*"></Route>
      </Route>
 
-     <Route element={<ErrorHandling />} path="/*" ></Route>
+     <Route path="/*" component={ErrorHandling} />
     
     </Routes>
     </div>
