@@ -1,7 +1,7 @@
 import './App.css';
 import {Routes,Route} from "react-router-dom"
 import Landingpage from './pages/Landingpage';
-import ErrorHandling from './pages/ErrorHandling';
+import ErrorHandling from './pages/user/ErrorHandling';
 
 
 // Protected  Routes
