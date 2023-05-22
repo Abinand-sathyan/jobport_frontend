@@ -110,7 +110,7 @@ function App() {
      <Route element={<AdminSubscription/>}  path='/admin/subscription'/>
      <Route element={<AdminAddsubscription/>}  path='/admin/addsubscription'/>
      <Route element={<Dasboard/>}  path='/admin/dashboard'/>
-     <Route element={<ErrorHandling />} path="/admin/*"></Route>
+     <Route path="/admin/*" component={ErrorHandling} />
      </Route>
 
      <Route path="/*" component={ErrorHandling} />
