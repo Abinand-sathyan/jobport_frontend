@@ -1,6 +1,7 @@
 import './App.css';
 import {Routes,Route} from "react-router-dom"
 import Landingpage from './pages/Landingpage';
+import ErrorHandling from './pages/ErrorHandling';
 
 
 // Protected  Routes
@@ -111,7 +112,7 @@ function App() {
      <Route element={<Dasboard/>}  path='/admin/dashboard'/>
      </Route>
 
-     
+     <Route path="/*" element={<ErrorHandling />}></Route>
     
     </Routes>
     </div>
