@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import Errhandle from '../components/Errorhandling/Errhandle'
 
 const ErrorHandling = () => {
