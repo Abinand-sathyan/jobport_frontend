@@ -16,6 +16,7 @@ const Jobs = () => {
   const [jobdatas, setJobdatas] = useState([]);
   const [modaldata, setModaldata] = useState([]);
   const [refresh, setRefresh] = useState([]);
+  const [checkSub, setChecksub] = useState(false);
 
   const { user } = useSelector((state) => state.clientLogin);
   const Navigate = useNavigate();
@@ -26,6 +27,9 @@ const Jobs = () => {
       (async function invoke() {
         await jobdata(token).then((res) => {
           setJobdatas(res?.data?.jobdata);
+          if (res?.data?.resumee) {
+            setChecksub(true);
+          }
         });
       })();
     } else {
@@ -52,14 +56,15 @@ const Jobs = () => {
   };
 
   return (
-    <body>
+    <div>
       <div
         className="jobContainer flex gap-10 justify-center flex-wrap items-center
       py-10"
       >
-        {jobdatas?.map((n) => {
+        {jobdatas?.map((n, index) => {
           return (
             <div
+              key={index}
               className="group group/item singleJob w-[250PX] p-[20px] bg-white border border-violet-600 rounded-[10px]
         hover:bg-siteviolet shadow-lg shadow-greyIsh-600/700 hover:shadow-2xl"
             >
@@ -173,13 +178,21 @@ const Jobs = () => {
               >
                 Apply Now
               </button>
+              {checkSub && (
+                <Link
+                  to="/profile"
+                  className="text-blue-500 hover:text-blue-700 mt-2"
+                >
+                  Click here to manage your resume
+                </Link>
+              )}
             </div>
             {/* <h1 className='font-semibold'>{moment(date).format('DD MMM, YYYY')}</h1>
                        <h1>{ moment(date).format('h:mm A')}</h1> */}
           </div>
         </div>
       </section>
-    </body>
+    </div>
   );
 };
 

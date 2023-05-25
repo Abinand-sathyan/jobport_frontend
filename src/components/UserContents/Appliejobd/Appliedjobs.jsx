@@ -3,6 +3,8 @@ import Navbar from "../../Navbar/Navbar";
 import { message } from "antd";
 import Footer from "../findjob/FooterDiv/Footer";
 import moment from "moment";
+import noresults from "../../../lottiefiles/noresults.json";
+import Lottie from "lottie-react";
 import { appliedjobs } from "../../../apis/userapi";
 import { useNavigate, Link } from "react-router-dom";
 import logo1 from "../../../Assets/download.png";
@@ -29,15 +31,16 @@ const Appliedjobs = () => {
   return (
     <div>
       <Navbar />
-      <body>
+      <div>
+      {appliedjobss.length > 0 ? (
         <div
           className="jobContainer flex gap-10 justify-center flex-wrap items-center
       py-10"
         >
-          {appliedjobss.map((n) => {
+          {appliedjobss.map((n,index) => {
             return (
-              <div
-                className="group group/item singleJob w-[250PX] p-[20px] bg-white border border-violet-600 rounded-[10px]
+              <div 
+              key={index} className="group group/item singleJob w-[250PX] p-[20px] bg-white border border-violet-600 rounded-[10px]
         hover:bg-siteviolet shadow-lg shadow-greyIsh-600/700 hover:shadow-2xl"
               >
                 <span className="flex justify-between items-center gap-4">
@@ -75,6 +78,8 @@ const Appliedjobs = () => {
             );
           })}
         </div>
+      ):( 
+      <Lottie animationData={noresults} className="h-[25rem] mt-10" />)}
         <input type="checkbox" id="my-modal-3" className="modal-toggle" />
         <section className="modal">
           <div className="modal-box h-[40rem] max-w-2xl">
@@ -151,7 +156,7 @@ const Appliedjobs = () => {
             </div>
           </div>
         </section>
-      </body>
+      </div>
       <Footer />
     </div>
   );

@@ -1,6 +1,8 @@
 import './App.css';
+import React from 'react';
 import {Routes,Route} from "react-router-dom"
-import Landingpage from './pages/Landingpage';
+import Landingpage from './pages/Landingpage'
+import ErrorScreen from './pages/ErrorScreen';
 
 
 
@@ -21,8 +23,8 @@ import Signupage from './pages/user/Signupage';
 import FindJobs from './pages/user/FindJobs';
 import Searchjobs from './pages/user/Searchjobs';
 import Resume from './pages/user/Resume'
-import Profile from './pages/user/Profile'
-import Applied from './pages/user/Applied'
+import Profile from './pages/user/Profile' 
+// import Applied from './pages/user/Applied'
 import Messages from './pages/user/Messagers'
 import Otpvrification from './pages/user/OtpVerification'
 import VerifNumber from './pages/user/VerifNumber';
@@ -54,7 +56,13 @@ import Adminjobspage from './pages/admin/Adminjobspage';
 import AdminSubscription from './pages/admin/AdminSubscription';
 import AdminAddsubscription from './pages/admin/AdminAddsubscription';
 import Dasboard from './pages/admin/Dasboard';
+import ManageSubscricption from './pages/admin/ManageSubscricption';
 
+
+
+//lazy components
+
+const LazyAppliedjob = React.lazy(() => import('./pages/user/Applied')); 
 
 
 function App() {
@@ -79,7 +87,7 @@ function App() {
       <Route element={<FindJobs />} path='/findjobs'/>
       <Route element={<Searchjobs />} path='/search'/>
       <Route element={<Profile/>} path='/profile'/>
-      <Route element={<Applied/>} path='/jobapplied'/>
+      <Route element={<React.Suspense fallback="loading..."><LazyAppliedjob/></React.Suspense>} path='/jobapplied'/>
       <Route element={<Messages/>} path='/messages'/>
       </Route>
       {/* recruiter router */}
@@ -110,10 +118,11 @@ function App() {
      <Route element={<AdminSubscription/>}  path='/admin/subscription'/>
      <Route element={<AdminAddsubscription/>}  path='/admin/addsubscription'/>
      <Route element={<Dasboard/>}  path='/admin/dashboard'/>
+     <Route element={<ManageSubscricption/>}  path='/admin/managesubscription'/>
      </Route>
 
      
-
+    <Route path="/*" element={<ErrorScreen />}></Route>
     </Routes>
     </div>
   );

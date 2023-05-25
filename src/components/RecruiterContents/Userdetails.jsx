@@ -33,8 +33,8 @@ const Userdetails = ({ worker }) => {
     if (token) {
       (async function invoke() {
         await resumedata(token, myData).then((res) => {
-          setResumedata(res.data.resumedata);
-          setUserdata(res.data.resumedata[0].userId);
+          setResumedata(res?.data?.resumedata);
+          setUserdata(res?.data?.resumedata[0]?.userId);
         });
       })();
     } else {
@@ -103,7 +103,7 @@ const Userdetails = ({ worker }) => {
                     className="text-xs text-left font-medium text-gray-300"
                   >
                     {" "}
-                    {userdatas.mobile_number}{" "}
+                    {userdatas?.mobile_number}{" "}
                   </p>
                 </li>
               </ul>
@@ -228,7 +228,7 @@ const Userdetails = ({ worker }) => {
                       Mobile Number
                     </dt>
                     <dd class="text-sm text-gray-400">
-                      {userdatas.mobile_number}
+                      {userdatas?.mobile_number}
                     </dd>
                   </div>
                 </dl>

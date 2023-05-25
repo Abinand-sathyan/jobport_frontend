@@ -66,12 +66,12 @@ const Landing = () => {
       </div> */}
           </div>
           <div className="text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-amber-500 sm:text-6xl">
+           <Link to="/login"><h1 className="text-4xl font-bold tracking-tight text-amber-500 sm:text-6xl">
               Find your dream job{" "}
               <span className="text-white">
                 today with our <span className="text-amber-500">simpler</span>
               </span>
-            </h1>
+            </h1></Link>
             <p className="mt-6 text-lg leading-8 text-gray-800">
               Unlock your potential with our comprehensive job search platform.
               Join the millions of successful job seekers on our platform

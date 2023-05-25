@@ -100,8 +100,8 @@ function HomeScreen() {
                   <Bar dataKey="value" fill="#8884d8" />
                 </BarChart>
                 <div className="flex -ml-5">
-                  {monthReport.map((data) => (
-                    <h1 className=" ml-8">{data.month}</h1>
+                  {monthReport.map((data,index) => (
+                    <h1 key={index} className=" ml-8">{data.month}</h1>
                   ))}
                 </div>
               </div>
@@ -121,9 +121,9 @@ function HomeScreen() {
                       </tr>
                     </thead>
                     <tbody>
-                      {monthReport.map((data) => (
+                      {monthReport.map((data,index) => (
                         <tr>
-                          <td className="p-3 text-sm text-gray-700 whitespace-nowrap">
+                          <td key={index} className="p-3 text-sm text-gray-700 whitespace-nowrap">
                             {data.month}
                           </td>
                           <td className="p-3 text-sm text-gray-700 whitespace-nowrap">

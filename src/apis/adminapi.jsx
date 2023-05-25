@@ -162,3 +162,33 @@ export const getdashBoard = async (token) => {
     return error;
   }
 };
+
+
+export const recruiterSub=async (token) => {
+  try {
+    const response = await axios({
+      url: "/admin/ReqSub",
+      method: "get",
+      headers: { adminToken: token },
+    });
+    return response;
+  } catch (error) {
+    return error;
+  }
+};
+
+export const Subcancel=async (token,data) => {
+  try {
+    const response = await axios({
+      url: "/admin/Subcancel",
+      method: "post",
+      data:{data},
+      headers:{adminToken: token},
+    });
+    return response;
+  } catch (error) {
+    return error;
+  }
+};
+
+

@@ -65,10 +65,10 @@ function Searchjob() {
           className="jobContainer flex gap-10 justify-center flex-wrap items-center
     py-10"
         >
-          {jobdatas.map((n) => {
+          {jobdatas.map((n,index) => {
             return (
               <div
-                className="group group/item singleJob w-[250PX] p-[20px] bg-white rounded-[10px]
+              key={index} className="group group/item singleJob w-[250PX] p-[20px] bg-white rounded-[10px]
       hover:bg-siteviolet shadow-2xl shadow-greyIsh-400/700 hover:shadow-lg"
               >
                 <span className="flex justify-between items-center gap-4">

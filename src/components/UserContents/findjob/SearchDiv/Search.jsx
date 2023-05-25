@@ -168,9 +168,9 @@ const Search = () => {
         <div className="flex">
           {suggtiondata.length > 0 && Searchtext1 && (
             <div className="w-[26rem] bg-white  rounded-md py-2 text-siteviolet h-fit">
-              {suggtiondata?.map((term) => (
+              {suggtiondata?.map((term,index) => (
                 <Link>
-                  <p
+                  <p key={index}
                     onClick={() => {
                       setSearchtext1(term.jobCategory);
                       setSuggetiondata([]);
@@ -184,9 +184,9 @@ const Search = () => {
           )}
           {companysuggtiondata?.length > 0 && Searchtext2 && (
             <div className="w-[26rem] bg-white md:ml-[25rem] rounded-md py-2 text-siteviolet h-fit">
-              {companysuggtiondata?.map((term) => (
+              {companysuggtiondata?.map((term,index) => (
                 <Link>
-                  <p
+                  <p key={index}
                     onClick={() => {
                       setSearchtext2(term.companyname);
                       setcompanySuggetiondata([]);
@@ -200,9 +200,9 @@ const Search = () => {
           )}
           {locationsuggtiondata?.length > 0 && Searchtext3 && (
             <div className="w-[26rem] bg-white  md:ml-[50rem] rounded-md py-2 text-siteviolet h-fit">
-              {locationsuggtiondata?.map((term) => (
+              {locationsuggtiondata?.map((term,index) => (
                 <Link>
-                  <p
+                  <p key={index}
                     onClick={() => {
                       setSearchtext3(term.location);
                       setlocationSuggetiondata([]);

@@ -167,8 +167,8 @@ const Message = () => {
                 </span> */}
                 </div>
                 <div className="flex flex-col space-y-1 mt-4 -mx-2 h-48 overflow-y-auto">
-                  {conversation.map((c) => (
-                    <div onClick={() => setCurrentchat(c)}>
+                  {conversation.map((c,index) => (
+                    <div key={index} onClick={() => setCurrentchat(c)}>
                       <Conversation conversation={c} currentuserdata={user} />
                     </div>
                   ))}
@@ -181,8 +181,8 @@ const Message = () => {
                   <div className="flex flex-col flex-auto flex-shrink-0 rounded-2xl bg-gray-100 h-full p-4">
                     <div className="flex flex-col h-full overflow-x-auto mb-4">
                       <div className="flex flex-col h-full">
-                        {messages?.map((m) => (
-                          <div ref={scrollRef}>
+                        {messages?.map((m,indexx) => (
+                          <div key={indexx} ref={scrollRef}>
                             <MessageText message={m} own={m.sender === user} />
                           </div>
                         ))}

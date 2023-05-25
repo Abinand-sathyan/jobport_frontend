@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const navigate = useNavigate();
   return (
     <div>
       <footer aria-label="Site Footer" className="bg-white dark:bg-gray-900">
@@ -10,27 +12,15 @@ const Footer = () => {
               Make Your Next Career Move!
             </strong>
 
-            <a
-              className="inline-flex items-center gap-2 rounded-full border border-white bg-white px-8 py-3 text-indigo-600 hover:bg-transparent hover:text-white focus:outline-none focus:ring active:bg-white/90"
-              href="/"
+            {/* <button
+              type="button"
+              class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-full text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+              onClick={() => {
+                navigate("/login");
+              }}
             >
-              <span className="text-sm font-medium"> Let's Get Started </span>
-
-              <svg
-                className="h-5 w-5"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </svg>
-            </a>
+              Light
+            </button> */}
           </div>
 
           <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
@@ -211,10 +201,10 @@ const Footer = () => {
                       className="group flex justify-center gap-1.5 sm:justify-start"
                       href="/"
                     >
-                      <span className="relative flex h-2 w-2">
+                      {/* <span className="relative flex h-2 w-2">
                         <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal-400 opacity-75"></span>
                         <span className="relative inline-flex h-2 w-2 rounded-full bg-teal-500"></span>
-                      </span>
+                      </span> */}
                     </a>
                   </li>
                 </ul>
@@ -222,7 +212,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="mt-16">
+          {/* <div className="mt-16">
             <ul className="flex justify-center gap-6 sm:justify-end">
               <li>
                 <a
@@ -335,7 +325,7 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
-          </div>
+          </div> */}
         </div>
       </footer>
     </div>

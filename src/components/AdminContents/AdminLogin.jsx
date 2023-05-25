@@ -112,11 +112,11 @@ function AdminLogin() {
                       <label className="block text-gray-700 text-sm font-bold mb-2">
                         Password
                       </label>
-                      <Link to="/forgetpassword">
+                      {/* <Link to="/forgetpassword">
                         <p className="text-xs text-cyan-400">
                           Forget Password?
                         </p>
-                      </Link>
+                      </Link> */}
                     </div>
                     <input
                       className=" text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none"

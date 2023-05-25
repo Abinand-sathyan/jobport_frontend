@@ -51,8 +51,8 @@ const Userhome = () => {
         className="jobContainer flex gap-10 justify-center flex-wrap items-center
         py-10"
       >
-        {recruiter.map((data) => (
-          <div className="card w-96 bg-base-100 shadow-xl">
+        {recruiter.map((data,index) => (
+          <div key={index} className="card w-96 bg-base-100 shadow-xl">
             <figure className="px-10 pt-10">
               <img
                 src={data?.company_image}
@@ -70,7 +70,7 @@ const Userhome = () => {
               <h4 className="card-title font-bold text-green-700 text-sm ">
                 {data?.tagline}
               </h4>
-              <p class="truncate h-6 overflow-hidden">{data?.discription}</p>
+              <p className="truncate h-6 overflow-hidden">{data?.discription}</p>
               <div className="flex justify-between">
                 <div className="card-actions ">
                   {/* <button className="btn btn-primary bg-siteviolet">view</button> */}

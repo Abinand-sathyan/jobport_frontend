@@ -91,7 +91,7 @@ const Myjobs = () => {
             />
             <button
               type="button"
-              class="focus:outline-none text-white bg-siteviolet focus:ring-4 
+              className="focus:outline-none text-white bg-siteviolet focus:ring-4 
               rounded-full md:text-lg text-sm md:px-10 px-5 md:py-2 font-bold   py-2 md:mr-2 md:my-2 my-1"
               onClick={() => {
                 controllmodal();
@@ -160,7 +160,7 @@ const Myjobs = () => {
         </thead>
         <tbody>
           {jobdatas.map((data, index) => (
-            <tr className="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0">
+            <tr key={index} className="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0">
               <td className="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
                 <span className="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
                   NO
@@ -239,10 +239,7 @@ const Myjobs = () => {
                 <span className="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
                   Edit
                 </span>
-                {/* <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white 
-              py-2 px-4 border border-blue-500 hover:border-transparent rounded" onClick={()=>{Edithandle(data)}}>
-  Edit
-</button> */}
+              
                 <button
                   className="bg-cyan-700 hover:bg-cyan-900 text-white font-bold py-1 px-6 rounded-full"
                   onClick={() => {

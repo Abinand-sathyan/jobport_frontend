@@ -57,8 +57,8 @@ const Listmodal = ({ isVisible, onclose, Userdata }) => {
               Candidates List
             </div>
 
-            {Userdata.users.slice(1).map((items) => (
-              <div className="flex justify-between my-2">
+            {Userdata.users.slice(1).map((items,index) => (
+              <div key={index} className="flex justify-between my-2">
                 <div
                   type="button"
                   class="w-full px-4 py-2 font-medium text-left border-b border-gray-200 hover:bg-gray-100   dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white"

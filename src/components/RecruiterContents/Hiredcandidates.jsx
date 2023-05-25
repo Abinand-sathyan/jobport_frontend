@@ -52,8 +52,8 @@ const Hiredcandidates = () => {
           </thead>
           <tbody>
             {jobhired?.map((data, index) =>
-              data.hired?.map((items, number) => (
-                <tr className="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0">
+              data.hired?.map((items,number) => (
+                <tr key={number} className="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0">
                   {/* <td className="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
          <span className="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">NO</span>
          {number+1}

@@ -65,9 +65,9 @@ const Subscriptionpage = () => {
           className="jobContainer flex gap-10 justify-center flex-wrap items-center
       py-10"
         >
-          {subdata.map((data) => {
+          {subdata.map((data,index) => {
             return (
-              <div
+              <div key={index}
                 className="group group/item singleJob w-[350px] p-[20px] h-full bg-white rounded-[10px]
         shadow-lg  hover:shadow-lg"
               >

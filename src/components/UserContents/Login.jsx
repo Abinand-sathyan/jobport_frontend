@@ -31,7 +31,15 @@ const Loginpage = () => {
 
       if (response.status === 200) {
         localStorage.setItem("userToken", response.data.userToken);
+        dispatch(
+          userLogin({
+            user: response.data.userid,
+            name: response.data.username,
+            token: response.data.userToken,
+          })
+        );
 
+        message.success("Login  successfully!");
         Navigate("/findjobs");
       }
     } catch (error) {
@@ -54,7 +62,7 @@ const Loginpage = () => {
       const result = response.data;
       if (result.success) {
         localStorage.setItem("userToken", response.data.userToken);
-        // localStorage.setItem("userToken", JSON.stringify(result));
+
         dispatch(
           userLogin({
             user: result.userid,
@@ -113,9 +121,7 @@ const Loginpage = () => {
                       discoveryDocs="claims_supported"
                       access_type="offline"
                       onResolve={VerifyEmail}
-                      onReject={(err) => {
-                      
-                      }}
+                      onReject={(err) => {}}
                     >
                       <GoogleLoginButton className="w-full" />
                     </LoginSocialGoogle>
