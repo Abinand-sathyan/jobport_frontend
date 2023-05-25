@@ -14,7 +14,8 @@ const Message = () => {
   const [messages, setMessages] = useState([]);
   const [Newmessage, setNewMessages] = useState("");
   const [arrivalMessage, setArrivalMessage] = useState(null);
-  const socket = useRef(io("ws://localhost:8900"));
+  // const socket = useRef(io("ws://localhost:8900"));
+  const socket = useRef(io("https://jobportsocket.onrender.com"))
   const scrollRef = useRef();
 
   const { recuiter } = useSelector((state) => state.recuiterLogin);
@@ -22,7 +23,7 @@ const Message = () => {
   const token = localStorage.getItem("recruiterToken");
 
   useEffect(() => {
-    socket.current = io("ws://localhost:8900");
+    socket.current = io("https://jobportsocket.onrender.com");
     socket.current.on("getMessage", (data) => {
       setArrivalMessage({
         sender: data.senderId,
