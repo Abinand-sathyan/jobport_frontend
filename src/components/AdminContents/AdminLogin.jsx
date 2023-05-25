@@ -43,7 +43,7 @@ function AdminLogin() {
 
         setloading(false);
         message.success("Login  successfully!");
-        Navigate("/admin/user");
+        Navigate("/admin/dashboard");
       } else {
         setloading(false);
         setError(result.message);
