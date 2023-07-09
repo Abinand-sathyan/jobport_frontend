@@ -12,6 +12,7 @@ const Listmodal = ({ isVisible, onclose, Userdata }) => {
   if (!isVisible) return null;
   const handleClose = (e) => {
     if (e.target.id === "wrapper") onclose();
+    console.log("purify");
   };
 
   const handlesubmit = async (userId) => {
