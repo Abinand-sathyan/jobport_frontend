@@ -63,6 +63,7 @@ const Signup = () => {
   const handleSignup = async (events) => {
     events.preventDefault();
     let data = new FormData(events.currentTarget);
+    console.log(data,"fouhduish");
 
     data = {
       Fname: data.get("Fname"),
@@ -72,35 +73,36 @@ const Signup = () => {
       Cpassword: data.get("Cpassword"),
       Mnumber: data.get("Mnumber"),
     };
+    console.log(data,"jfdsijifdjif");
 
-    try {
-      if (validateaField(data)) {
-        setisloading(true);
-        const response = await axios({
-          url: "/Auth/userSignup",
-          method: "post",
-          data: {
-            data,
-          },
-        });
-        const result = response.data;
-        if (result.success) {
-          setisloading(false);
-          Navigate("/otpverification",{state:data});
-        } else {
-          setisloading(false);
-          setError(result.message);
-          message.error(result.message).then(() => {
-            setError(null);
-          });
-        }
-      } else {
+    // try {
+    //   if (validateaField(data)) {
+    //     setisloading(true);
+    //     const response = await axios({
+    //       url: "/Auth/userSignup",
+    //       method: "post",
+    //       data: {
+    //         data,
+    //       },
+    //     });
+    //     const result = response.data;
+    //     if (result.success) {
+    //       setisloading(false);
+    //       Navigate("/otpverification",{state:data});
+    //     } else {
+    //       setisloading(false);
+    //       setError(result.message);
+    //       message.error(result.message).then(() => {
+    //         setError(null);
+    //       });
+    //     }
+    //   } else {
    
-      }
-    } catch (error) {
-      setisloading(false);
-      message.error("Somthing went wrong!");
-    }
+    //   }
+    // } catch (error) {
+    //   setisloading(false);
+    //   message.error("Somthing went wrong!");
+    // }
   };
   return (
     <div>

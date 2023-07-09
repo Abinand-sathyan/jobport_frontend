@@ -8,7 +8,8 @@ import { ref, uploadString, getDownloadURL } from "firebase/storage";
 import { storage } from "../../firebase/firebase";
 import "./modal.css";
 
-const Editjobmodal = ({ isVisible, SingleJobdata, onclose }) => {
+const 
+Editjobmodal = ({ isVisible, SingleJobdata, onclose }) => {
   const [errors, setErrors] = useState({});
   const [isloading, setisloading] = useState(false);
   const [error, setError] = useState();

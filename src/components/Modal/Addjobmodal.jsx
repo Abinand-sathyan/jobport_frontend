@@ -27,6 +27,7 @@ const Addjobmodal = ({ isVisible, onclose }) => {
         });
       })();
     } else {
+      console.log("chrckingg..");
       message.error("Please Login");
       navigate("/recruiter/login");
     }
