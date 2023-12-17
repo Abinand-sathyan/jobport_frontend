@@ -1,17 +1,17 @@
 import axios from "../axios/axios";
 
-export const userlist = async (token) => {
-  try {
-    const response = await axios({
-      url: "/admin/userlist",
-      method: "get",
-      headers: { adminToken: token },
-    });
-    return response;
-  } catch (error) {
-    return error;
-  }
-};
+  export const userlist = async (token) => {
+    try {
+      const response = await axios({
+        url: "/admin/userlist",
+        method: "get",
+        headers: { adminToken: token },
+      });
+      return response;
+    } catch (error) {
+      return error;
+    }
+  };
 
 export const recruiterlist = async (token) => {
   try {
